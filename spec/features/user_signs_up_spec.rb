@@ -17,23 +17,6 @@ feature 'User signs up', %Q{
   # - The form requires me to provide all information
   # - I am logged in once I sign up
 
-  scenario "there is a link for user to sign up" do
-    visit root_path
-
-    expect(page).to have_content "Sign Up"
-  end
-
-  scenario "sign up form is provided" do
-    visit new_user_registration_path
-
-    expect(page).to have_content "First Name"
-    expect(page).to have_content "Last Name"
-    expect(page).to have_content "Date of Birth"
-    expect(page).to have_content "Email"
-    expect(page).to have_content "Password"
-    expect(page).to have_content "Password confirmation"
-  end
-
   scenario "user provides valid information" do
     user = FactoryGirl.create(:user)
     email = generate :email
