@@ -15,8 +15,6 @@ feature 'user signs out', %Q{
     user = FactoryGirl.create(:user)
     sign_in(user)
 
-    expect(page).to have_content "Sign Out"
-
     click_link "Sign Out"
 
     expect(page).to have_content "Signed out successfully."
