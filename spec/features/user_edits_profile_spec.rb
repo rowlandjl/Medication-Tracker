@@ -17,14 +17,14 @@ feature 'User edits profile', %Q{
 # - The form requires user to provide all required information
 # - My profile is updated once I click "update profile"
 
-  scenario 'user logs in and wants to edit profile' do
-    user = FactoryGirl.create(:user)
+  let!(:user) { FactoryGirl.create(:user) }
+
+  before(:each) do
     sign_in(user)
-
-    expect(page).to have_content "Edit Profile"
-
     click_link "Edit Profile"
+  end
 
+  scenario 'user logs in and wants to edit profile' do
     expect(page).to have_content "First Name"
     expect(page).to have_content "Last Name"
     expect(page).to have_content "Date of Birth"
@@ -33,11 +33,6 @@ feature 'User edits profile', %Q{
   end
 
   scenario 'user provides valid information' do
-    user = FactoryGirl.create(:user)
-    sign_in(user)
-
-    click_link "Edit Profile"
-
     fill_in "First Name", with: user.first_name
     fill_in "Last Name", with: "Smith"
     fill_in "Date of Birth", with: user.dob
@@ -49,11 +44,6 @@ feature 'User edits profile', %Q{
   end
 
   scenario 'user provides invalid information' do
-    user = FactoryGirl.create(:user)
-    sign_in(user)
-
-    click_link "Edit Profile"
-
     click_button "Update"
 
     expect(page).to have_content "can't be blank"
