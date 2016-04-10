@@ -7,13 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <h1><%= link_to "Medication Tracker", root_path %></h1>
+          <p id="logo">Medication Tracker</p>
         </div>
         <div class="col-md-4">
-          <ul class="nav navbar-nav">
+          <ul class="navbar">
             <% if !user_signed_in? %>
               <li><%= link_to "Sign Up", new_user_registration_path %></li>
               <li><%= link_to "Log In", new_user_session_path %></li>
@@ -25,22 +25,21 @@
         </div>
       </div>
     </div>
-  <div class="container-fluid">
-    <div class="row">
+    <% if !user_signed_in? %>
+    <div class="container-fluid">
+    <% else %>
+    <div class="container">
+    <% end %>
+      <div class="row">
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
       <% end %>
       <% if alert %>
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
-    </div>
-    <div class="row">
-
-
+      </div>
         <%= yield %>
-    </div>
-  </div>
-
+      </div>
 </body>
 
 </html>
