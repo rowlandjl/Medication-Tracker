@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'bootstrap-modal-rails'
 
 group :development, :test do
   gem 'pry-rails'
