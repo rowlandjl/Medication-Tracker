@@ -43,11 +43,22 @@ a:hover {
   text-decoration: none;
 }
 
+.main-header {
+  padding-top: 10px;
+}
+
+.navbar {
+  padding: 15px;
+}
+
+.navbar li {
+  padding: 0 20px;
+}
+
 #logo {
   font-family: 'Raleway';
-  text-transform: uppercase;
   font-weight: normal;
-  font-size: 42px;
+  font-size: 28px;
 }
 
 .form-bottom {
