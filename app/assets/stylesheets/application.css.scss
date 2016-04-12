@@ -15,3 +15,94 @@
  */
 @import "bootstrap";
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
+body {
+  // background-color: #eaeaea;
+}
+
+.form-top {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #888;
+  line-height: 30px;
+  text-align: center;
+  box-shadow: 0 0 30px #c8c8c8;
+}
+
+a {
+  color: black;
+}
+
+.navbar li {
+  display: inline-block;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.main-header {
+  padding-top: 10px;
+}
+
+.navbar {
+  padding: 15px;
+}
+
+.navbar li {
+  padding: 0 20px;
+}
+
+#logo {
+  font-family: 'Raleway';
+  font-weight: normal;
+  font-size: 28px;
+}
+
+.form-bottom {
+	padding: 25px 25px 30px 25px;
+	// background: #eee;
+	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+	text-align: left;
+}
+
+.form-bottom form textarea {
+	height: 100px;
+}
+
+.form-bottom form .input-error {
+	border-color: #19b9e7;
+}
+
+.form-top-left h3 { margin-top: 0; }
+
+.form-top {
+	overflow: hidden;
+	padding: 0 25px 15px 25px;
+	background: #fff;
+	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+	text-align: left;
+}
+
+.form-top-left {
+	float: left;
+	width: 75%;
+	padding-top: 25px;
+}
+
+.form-box {
+	padding-top: 40px;
+}
+
+h3 {
+	font-size: 22px;
+    font-weight: 300;
+    color: #555;
+    line-height: 30px;
+}
+
+#user-log-in {
+  padding-top: 10px;
+}
