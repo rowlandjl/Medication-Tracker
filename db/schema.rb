@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 20160410190904) do
     t.string   "frequency"
     t.string   "start_date"
     t.string   "end_date"
-    t.integer  "user_id"
-    t.integer  "drug_id"
-    t.integer  "physician_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "user_id",        null: false
+    t.string   "drug_name",      null: false
+    t.string   "physician_name"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "user_physicians", force: :cascade do |t|
