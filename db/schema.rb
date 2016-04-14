@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160410190904) do
 
   create_table "prescriptions", force: :cascade do |t|
     t.string   "quantity"
+    t.string   "dose_count"
     t.string   "frequency"
     t.string   "start_date"
     t.string   "end_date"

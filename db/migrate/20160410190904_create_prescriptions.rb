@@ -2,6 +2,7 @@ class CreatePrescriptions < ActiveRecord::Migration
   def change
     create_table :prescriptions do |t|
       t.string :quantity
+      t.string :dose_count
       t.string :frequency
       t.string :start_date
       t.string :end_date
