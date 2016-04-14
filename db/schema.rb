@@ -11,10 +11,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406003509) do
+ActiveRecord::Schema.define(version: 20160410190904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "allergies", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "reaction_date"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "drugs", force: :cascade do |t|
+    t.string "name"
+    t.string "strength"
+    t.string "drug_class"
+    t.string "adverse_reaction"
+    t.string "indications"
+  end
+
+  create_table "health_conditions", force: :cascade do |t|
+    t.string  "name"
+    t.string  "diagnosis_date"
+    t.integer "user_id"
+  end
+
+  create_table "physicians", force: :cascade do |t|
+    t.string   "name"
+    t.string   "office"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prescriptions", force: :cascade do |t|
+    t.string   "quantity"
+    t.string   "dose_count"
+    t.string   "frequency"
+    t.string   "start_date"
+    t.string   "end_date"
+    t.integer  "user_id",        null: false
+    t.string   "drug_name",      null: false
+    t.string   "physician_name"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "user_physicians", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "physician_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                          null: false
