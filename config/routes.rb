@@ -9,4 +9,10 @@ Rails.application.routes.draw do
 
   root 'welcome_pages#index'
 
+<<<<<<< HEAD
+=======
+  devise_for :users
+
+  resource :prescriptions
+>>>>>>> user_adds_prescription
 end
