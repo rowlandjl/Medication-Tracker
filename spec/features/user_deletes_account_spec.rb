@@ -18,7 +18,7 @@ feature 'User deletes account', %Q{
     sign_in(user)
 
     click_link "Edit Profile"
-    click_button "Cancel my account"
+    click_link "Cancel my account"
 
     expect(page).to have_content "Sign Up"
     expect(page).to have_content "Log In"
