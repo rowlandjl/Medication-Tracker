@@ -1,3 +1,9 @@
 <h3>User Dashboard</h3>
 
 <%= link_to "Add Prescription", new_prescription_path %>
+
+<ul>
+  <% @prescription.each do |rx| %>
+    <li><%= rx.drug %></li>
+  <% end %>
+</ul>
