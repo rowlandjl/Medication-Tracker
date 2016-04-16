@@ -27,8 +27,8 @@ feature 'User signs up', %Q{
     fill_in "First Name", with: user.first_name
     fill_in "Last Name", with: user.last_name
     fill_in "Date of Birth", with: user.dob
-    fill_in "Email", with: email
-    fill_in "Password", with: user.password
+    fill_in "email", with: email
+    fill_in "password", with: user.password
     fill_in "Password confirmation", with: user.password
     click_button "Sign up"
 

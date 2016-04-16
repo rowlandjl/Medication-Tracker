@@ -21,13 +21,6 @@ feature 'User logs in', %Q{
     expect(page).to have_content "Log In"
   end
 
-  scenario 'log in form is provided' do
-    visit new_user_session_path
-
-    expect(page).to have_content "Email"
-    expect(page).to have_content "Password"
-  end
-
   scenario 'user provides valid information' do
     user = FactoryGirl.create(:user)
     sign_in(user)
