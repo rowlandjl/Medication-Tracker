@@ -4,6 +4,6 @@
 
 <ul>
   <% @prescriptions.each do |rx| %>
-    <li><%= rx.drug %></li>
+    <li><%= link_to rx.drug, prescription_path(rx) %></li>
   <% end %>
 </ul>
