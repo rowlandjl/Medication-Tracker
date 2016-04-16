@@ -11,7 +11,6 @@ feature 'User views list of prescriptions', %Q{
     sign_in(user)
 
     med = FactoryGirl.create(:prescription)
-    create_prescription(med)
 
     click_link "View Details"
 
