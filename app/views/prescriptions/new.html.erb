@@ -3,8 +3,7 @@
 <%= form_for @prescription do |f| %>
 
   <div class="form-group">
-    <%= f.label :drug_name %>
-    <%= f.text_field :drug_name %>
+    <%= f.text_field :drug, id: 'drug_name' %>
   </div>
 
   <div class="form-group">
@@ -12,10 +11,7 @@
     <%= f.text_field :quantity %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :dose_count %>
-    <%= f.text_field :dose_count %>
-  </div>
+
 
   <div class="form-group">
     <%= f.label :frequency %>
@@ -32,12 +28,8 @@
     <%= f.text_field :end_date %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :physician_name %>
-    <%= f.text_field :physician_name %>
-  </div>
 
   <div class="actions">
-    <%= f.submit "Add Prescription" %>
+    <%= f.submit "Create Prescription" %>
   </div>
 <% end %>

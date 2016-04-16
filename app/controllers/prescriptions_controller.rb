@@ -7,7 +7,7 @@ class PrescriptionsController < ApplicationController
   end
 
   def new
-    @prescription = Prescription.new
+    @prescription = Prescription.new(params[:id])
   end
 
   def create
@@ -32,6 +32,6 @@ class PrescriptionsController < ApplicationController
   private
 
   def prescription_params
-    params.require(:prescription).permit(:drug_name, :quantity, :dose_count, :frequency, :start_date, :end_date, :physician_name)
+    params.require(:prescription).permit(:drug, :quantity, :dose_count, :frequency, :start_date, :end_date, :physician_name)
   end
 end

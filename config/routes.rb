@@ -1,18 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resource :dashboard, only: [:show]
+  resources :dashboard, only: [:show]
+
+  resources :prescriptions
 
   authenticated :user do
-    root 'dashboards#show'
+    root 'dashboards#show', :as => 'user_root'
   end
 
   root 'welcome_pages#index'
 
-<<<<<<< HEAD
-=======
-  devise_for :users
-
-  resource :prescriptions
->>>>>>> user_adds_prescription
 end

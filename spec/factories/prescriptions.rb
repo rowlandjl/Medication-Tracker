@@ -1,10 +1,11 @@
 FactoryGirl.define do
   factory :prescription do
-    drug_name "Crestor"
+    drug "Crestor"
     quantity "30"
     dose_count "1"
     frequency "once a day"
     start_date "1/1/2016"
     physician_name "John Doe"
+    user_id 1
   end
 end
