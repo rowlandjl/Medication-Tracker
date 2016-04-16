@@ -24,20 +24,12 @@ feature 'User edits profile', %Q{
     click_link "Edit Profile"
   end
 
-  scenario 'user logs in and wants to edit profile' do
-    expect(page).to have_content "First Name"
-    expect(page).to have_content "Last Name"
-    expect(page).to have_content "Date of Birth"
-    expect(page).to have_content "Email"
-    expect(page).to have_content "Password"
-  end
-
   scenario 'user provides valid information' do
-    fill_in "First Name", with: user.first_name
-    fill_in "Last Name", with: "Smith"
-    fill_in "Date of Birth", with: user.dob
-    fill_in "Email", with: "test@example.com"
-    fill_in "Current password", with: user.password
+    fill_in "first_name", with: user.first_name
+    fill_in "last_name", with: "Smith"
+    fill_in "dob", with: user.dob
+    fill_in "email", with: "test@example.com"
+    fill_in "current_password", with: user.password
     click_button "Update"
 
     expect(page).to have_content "Your account has been updated successfully."
