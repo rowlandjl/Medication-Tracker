@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'support/authentication_helper'
 
 feature 'User creates prescription', %Q{
   As an authenticated user
@@ -29,7 +28,7 @@ feature 'User creates prescription', %Q{
   end
 
   scenario 'User provides valid information' do
-    rx = FactoryGirl.create(:prescription)
+    rx = FactoryGirl.create(:prescription, user:user)
 
     fill_in "drug_name", with: rx.drug
     fill_in "quantity", with: rx.quantity

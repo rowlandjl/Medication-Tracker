@@ -6,17 +6,23 @@ feature 'User views list of prescriptions', %Q{
   I want to view a list of my medications
 } do
 
-  scenario 'user can see a list of all prescriptions' do
-    user = FactoryGirl.create(:user)
+  let(:user) { FactoryGirl.create(:user) }
+  let(:another_user) { FactoryGirl.create(:user) }
+
+  let!(:user_prescription) { FactoryGirl.create(:prescription, user: user, drug: "Prozovoloftin") }
+  let!(:another_user_prescription) { FactoryGirl.create(:prescription, user: another_user, drug: "Caffeine") }
+
+  before(:each) do
     sign_in(user)
-
-    med = FactoryGirl.create(:prescription)
-    create_prescription(med)
-
-    click_link "View Details"
-
-    expect(page).to have_content "List of Prescriptions"
-    expect(page).to have_content "Crestor"
+    visit root_path
   end
 
+  scenario 'user can see a list of all prescriptions' do
+    # expect(page).to have_content "List of Prescriptions"
+    expect(page).to have_content "Prozovoloftin"
+  end
+
+  scenario 'user cannot view other users prescriptions' do
+    expect(page).to_not have_content "Caffeine"
+  end
 end

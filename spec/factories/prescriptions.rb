@@ -6,6 +6,6 @@ FactoryGirl.define do
     frequency "once a day"
     start_date "1/1/2016"
     physician_name "John Doe"
-    user_id 1
+    user
   end
 end

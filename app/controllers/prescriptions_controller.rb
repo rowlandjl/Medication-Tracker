@@ -1,33 +1,18 @@
 class PrescriptionsController < ApplicationController
 
-  def index
-    @prescriptions = Prescription.all
-  end
-
-  def show
-  end
-
   def new
-    @prescription = Prescription.new(params[:id])
+    @prescription = Prescription.new
   end
 
   def create
     @prescription = Prescription.new(prescription_params)
     @prescription.user_id = current_user.id
+
     if @prescription.save
       redirect_to root_path
     else
       render action: 'new'
     end
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private

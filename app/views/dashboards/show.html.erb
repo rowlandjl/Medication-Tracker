@@ -3,9 +3,7 @@
 <%= link_to "Add Prescription", new_prescription_path %>
 
 <ul>
-  <% @prescription.each do |rx| %>
+  <% @prescriptions.each do |rx| %>
     <li><%= rx.drug %></li>
   <% end %>
 </ul>
-
-<%= link_to "View Details", prescriptions_path %>
