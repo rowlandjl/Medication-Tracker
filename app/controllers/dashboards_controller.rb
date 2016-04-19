@@ -2,7 +2,6 @@ class DashboardsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @prescription = Prescription.all
+    @prescriptions = Prescription.where(user: current_user)
   end
-
 end

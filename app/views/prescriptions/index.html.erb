@@ -1,0 +1,7 @@
+<h3>List of Prescriptions</h3>
+
+<ul>
+  <% @prescriptions.each do |rx| %>
+    <li><%= link_to "#{rx.drug}", prescription_path(rx) %></a></li>
+  <% end %>
+</ul>
