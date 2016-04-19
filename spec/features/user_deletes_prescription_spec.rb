@@ -7,17 +7,12 @@ feature 'User deletes prescription', %Q{
   Because I am no longer taking it
 } do
 
-  let!(:user) { FactoryGirl.create(:user) }
-
-  before(:each) do
-    sign_in(user)
-    click_link "Add Prescription"
-  end
 
   scenario 'user deletes medication' do
-    rx = FactoryGirl.create(:prescription)
+    user = FactoryGirl.create(:user)
+    FactoryGirl.create(:prescription, user: user)
 
-    visit prescriptions_path
+    sign_in(user)
 
     click_link "Crestor"
     click_link "Delete Prescription"
