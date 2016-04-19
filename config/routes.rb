@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:show]
 
-  resources :prescriptions, only: [:show, :new, :create]
+  resources :prescriptions, only: [:show, :new, :create, :edit, :update]
 
   authenticated :user do
     root 'dashboards#show', :as => 'user_root'
