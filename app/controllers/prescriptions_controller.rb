@@ -33,6 +33,12 @@ class PrescriptionsController < ApplicationController
     end
   end
 
+  def destroy
+    @prescription = Prescription.find(params[:id])
+    @prescription.destroy
+    redirect_to user_root_path
+  end
+
   private
 
   def prescription_params
