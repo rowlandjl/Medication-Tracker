@@ -16,22 +16,31 @@
 @import "bootstrap";
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
-body {
-  // background-color: #eaeaea;
-}
 
-.form-top {
+.form-top, .subheader {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 300;
-  color: #888;
   line-height: 30px;
-  text-align: center;
   box-shadow: 0 0 30px #c8c8c8;
+}
+
+.form-top {
+  text-align: center;
+  color: #888;
+}
+
+.subheader {
+  background: #fff;
+  color: black;
 }
 
 a {
   color: black;
+}
+
+.subheader li {
+  display: inline-block;
 }
 
 .navbar li {

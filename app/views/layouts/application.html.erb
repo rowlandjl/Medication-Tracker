@@ -38,6 +38,19 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
       </div>
+      <% if user_signed_in? %>
+        <div class="row subheader">
+          <div class="col-md-8">
+            <ul>
+              <li>Dashboard</li>
+              <li>Prescriptions</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <p>Welcome, <%= "#{current_user.first_name}" %> <%= "#{current_user.last_name}" %>!</p>
+          </div>
+        </div>
+      <% end %>
         <%= yield %>
       </div>
 </body>
