@@ -20,8 +20,6 @@ class PrescriptionsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-=======
   def edit
     @prescription = Prescription.find(params[:id])
   end
@@ -35,10 +33,6 @@ class PrescriptionsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
->>>>>>> user_edits_prescription
   private
 
   def prescription_params

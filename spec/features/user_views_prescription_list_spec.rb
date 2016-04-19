@@ -9,11 +9,9 @@ feature 'User views list of prescriptions', %Q{
   let(:user) { FactoryGirl.create(:user) }
   let(:another_user) { FactoryGirl.create(:user) }
 
-<<<<<<< HEAD
   let!(:user_prescription) { FactoryGirl.create(:prescription, user: user, drug: "Prozovoloftin") }
   let!(:another_user_prescription) { FactoryGirl.create(:prescription, user: another_user, drug: "Caffeine") }
-=======
->>>>>>> user_edits_prescription
+
 
   before(:each) do
     sign_in(user)

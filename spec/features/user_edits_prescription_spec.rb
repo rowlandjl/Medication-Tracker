@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'support/authentication_helper'
 
 feature 'User edits prescription', %Q{
   As an authenticated user
@@ -10,11 +9,9 @@ feature 'User edits prescription', %Q{
 
   scenario 'user provides valid information' do
     user = FactoryGirl.create(:user)
+    FactoryGirl.create(:prescription, user: user)
+
     sign_in(user)
-
-    rx = FactoryGirl.create(:prescription)
-
-    visit prescriptions_path
 
     click_link "Crestor"
     click_link "Edit Prescription"
@@ -24,7 +21,6 @@ feature 'User edits prescription', %Q{
 
     click_button "Update"
 
-    visit prescriptions_path
     click_link "Crestor"
 
     expect(page).to have_content "2 once a day"
