@@ -18,8 +18,7 @@ feature 'User views list of prescriptions', %Q{
   end
 
   scenario 'user can see a list of all prescriptions' do
-    # expect(page).to have_content "List of Prescriptions"
-    expect(page).to have_content "Prozovoloftin"
+    expect(page).to have_content user_prescription.drug
   end
 
   scenario 'user cannot view other users prescriptions' do
