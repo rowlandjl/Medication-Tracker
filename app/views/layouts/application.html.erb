@@ -13,7 +13,7 @@
           <h6><%= link_to "Medication Tracker", root_path, id: "logo" %></h6>
         </div>
         <div class="col-md-4">
-          <ul class="navbar">
+          <ul class="navbar text-right">
             <% if !user_signed_in? %>
               <li><%= link_to "Sign Up", new_user_registration_path %></li>
               <li><%= link_to "Log In", new_user_session_path %></li>
@@ -28,7 +28,7 @@
     <% if !user_signed_in? %>
     <div class="container-fluid">
     <% else %>
-    <div class="container">
+    <div class="container fill">
     <% end %>
       <div class="row">
       <% if notice %>
@@ -41,12 +41,18 @@
       <% if user_signed_in? %>
         <div class="row subheader">
           <div class="col-md-8">
-            <ul>
-              <li>Dashboard</li>
-              <li>Prescriptions</li>
-            </ul>
+            <div class="col-md-3 text-center">
+              <%= link_to user_root_path do %>
+                <%= image_tag("buildings.png", class: "dashboard-icon") %>
+                <p>Dashboard</p>
+              <% end %>
+            </div>
+            <div class="col-md-3 text-center">
+              <%= image_tag("pill-icon.png", class: "dashboard-icon")  %>
+              <p>Prescriptions</p>
+            </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 text-right">
             <p>Welcome, <%= "#{current_user.first_name}" %> <%= "#{current_user.last_name}" %>!</p>
           </div>
         </div>

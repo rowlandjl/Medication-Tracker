@@ -33,6 +33,8 @@
 .subheader {
   background: #fff;
   color: black;
+  padding: 10px 0;
+  margin-top: 10px;
 }
 
 a {
@@ -114,3 +116,50 @@ h3 {
 #user-log-in {
   padding-top: 10px;
 }
+
+.dashboard-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+//
+// /* Mobile */
+// @media (max-width: 767px) {
+//   .item {
+//     height: 100%;
+//   }
+//   .item > img {
+//     width: 100%;
+//   }
+// }
+//
+// /* tablets */
+// @media (max-width: 991px) and (min-width: 768px) {
+//   .item {
+//     height: auto;
+//   }
+//   .item > img {
+//     width: 100%;
+//   }
+// }
+//
+// /* laptops */
+// @media (max-width: 1023px) and (min-width: 992px) {
+//   .item {
+//     height: auto;
+//   }
+//   .item > img {
+//     width: 100%;
+//   }
+// }
+//
+// /* desktops */
+// @media (min-width: 1024px) {
+//   .item {
+//     height: 100%;
+//   }
+//   .item > img {
+//     width: 100%;
+//   }
+// }
