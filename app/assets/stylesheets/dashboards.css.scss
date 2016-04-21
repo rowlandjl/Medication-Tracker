@@ -12,13 +12,14 @@ div.col-md-4 {
   max-width: 600px;
   padding:5px;
   width: 100%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px #c8c8c8;
   animation: float 5s infinite;
+  margin-top: 30px;
 }
 
 th {
-  color:#D5DDE5;;
-  background:#1b1e24;
+  color:#666B85;
+  background:#fff;
   border-bottom:4px solid #9ea7af;
   border-right: 1px solid #343a45;
   font-size:23px;

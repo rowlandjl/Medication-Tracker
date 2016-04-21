@@ -8,9 +8,9 @@
       </thead>
       <tbody class="table-hover">
           <% @prescriptions.each do |rx| %>
-          <tr>
-            <td><%= link_to rx.drug, prescription_path(rx) %></td>
-          </tr>
+            <tr>
+              <td><%= link_to rx.drug, prescription_path(rx) %></td>
+            </tr>
           <% end %>
       </tbody>
     </table>
