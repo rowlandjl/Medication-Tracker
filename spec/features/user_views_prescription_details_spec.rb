@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'support/authentication_helper'
 
 feature 'User views prescription details', %Q{
   As an authenticated user
