@@ -47,13 +47,9 @@
                 <p>Dashboard</p>
               <% end %>
             </div>
-            <div class="col-md-3 text-center">
-              <%= image_tag("pill-icon.png", class: "dashboard-icon")  %>
-              <p>Prescriptions</p>
-            </div>
           </div>
-          <div class="col-md-4 text-right">
-            <p>Welcome, <%= "#{current_user.first_name}" %> <%= "#{current_user.last_name}" %>!</p>
+          <div class="col-md-4 text-right user-greeting">
+            <p>Welcome, <%= "#{current_user.first_name}" %> <%= "#{current_user.last_name}" %></p>
           </div>
         </div>
       <% end %>
