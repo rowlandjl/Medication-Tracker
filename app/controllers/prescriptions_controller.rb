@@ -17,6 +17,7 @@ class PrescriptionsController < ApplicationController
     if @prescription.save
       redirect_to root_path
     else
+      @prescription_frequency = Prescription::FREQUENCY
       render action: 'new'
     end
   end

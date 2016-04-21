@@ -1,38 +1,45 @@
 <%= prescription_error_messages! %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 form-box">
+    <div class="form-top">
+      <h3>Create Prescription</h3>
 
-<h3>Create Prescription</h3>
+      <div class="form-bottom">
 
-<%= form_for @prescription do |f| %>
+        <%= form_for @prescription, html: {id: "sign_up_form"} do |f| %>
+          <div class="form-group">
+            <%= f.text_field :drug, id: "drug_name", class: "form-control", placeholder: "Drug Name" %>
+          </div>
 
-  <div class="form-group">
-    <%= f.text_field :drug, id: "drug_name", placeholder: "Drug Name" %>
+          <div class="form-group">
+            <%= f.text_field :quantity, id: "quantity", class: "form-control", placeholder: "Quantity" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :dose_count, id: "dose_count", class: "form-control", placeholder: "Dose Count" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.select :frequency, @prescription_frequency, {prompt: "Frequency"}, {:class => "form-control", id: "frequency"} %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :start_date, id: "start_date", class: "form-control", placeholder: "Start Date" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :end_date, id: "end_date", class: "form-control", placeholder: "End Date" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :physician_name, id: "physician", class: "form-control", placeholder: "Physician Name" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Add Prescription", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= f.text_field :quantity, id: "quantity", placeholder: "Quantity" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_field :dose_count, id: "dose_count", placeholder: "Dose Count" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.select :frequency, @prescription_frequency, id: "frequency", prompt: "Frequency" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_field :start_date, id: "start_date", placeholder: "Start Date" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_field :end_date, id: "end_date", placeholder: "End Date" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_field :physician_name, id: "physician", placeholder: "Physician Name" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Add Prescription" %>
-  </div>
-<% end %>
+</div>
