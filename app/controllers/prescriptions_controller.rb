@@ -7,6 +7,7 @@ class PrescriptionsController < ApplicationController
 
   def new
     @prescription = Prescription.new
+    @prescription_frequency = Prescription::FREQUENCY
   end
 
   def create
