@@ -24,6 +24,7 @@ class PrescriptionsController < ApplicationController
 
   def edit
     @prescription = Prescription.find(params[:id])
+    @prescription_frequency = Prescription::FREQUENCY
   end
 
   def update
@@ -31,6 +32,7 @@ class PrescriptionsController < ApplicationController
     if @prescription.update(prescription_params)
       redirect_to user_root_path
     else
+      @prescription_frequency = Prescription::FREQUENCY
       render action: "edit"
     end
   end
