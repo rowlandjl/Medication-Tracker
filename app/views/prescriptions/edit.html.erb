@@ -16,7 +16,7 @@
           </div>
 
           <div class="form-group">
-            <%= f.text_field :dose_count, id: "dose_count", class: "form-control", placeholder: "Dose Count" %>
+            <%= f.select :dose_count, @prescription_dose, {prompt: "Dose Count"}, {id: "dose_count", class: "form-control"} %>
           </div>
 
           <div class="form-group">

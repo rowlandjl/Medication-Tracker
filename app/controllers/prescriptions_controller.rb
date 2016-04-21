@@ -8,6 +8,7 @@ class PrescriptionsController < ApplicationController
   def new
     @prescription = Prescription.new
     @prescription_frequency = Prescription::FREQUENCY
+    @prescription_dose = Prescription::DOSE
   end
 
   def create
@@ -18,6 +19,7 @@ class PrescriptionsController < ApplicationController
       redirect_to root_path
     else
       @prescription_frequency = Prescription::FREQUENCY
+      @prescription_dose = Prescription::DOSE
       render action: 'new'
     end
   end
@@ -25,6 +27,7 @@ class PrescriptionsController < ApplicationController
   def edit
     @prescription = Prescription.find(params[:id])
     @prescription_frequency = Prescription::FREQUENCY
+    @prescription_dose = Prescription::DOSE
   end
 
   def update
@@ -33,6 +36,7 @@ class PrescriptionsController < ApplicationController
       redirect_to user_root_path
     else
       @prescription_frequency = Prescription::FREQUENCY
+      @prescription_dose = Prescription::DOSE
       render action: "edit"
     end
   end
