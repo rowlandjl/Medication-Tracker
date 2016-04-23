@@ -3,5 +3,6 @@ class DashboardsController < ApplicationController
 
   def show
     @prescriptions = Prescription.where(user: current_user)
+    @physicians = Physician.where(user: current_user)
   end
 end
