@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-6">
     <table class="table table-condensed table-fill">
       <thead>
         <tr>
@@ -7,15 +7,48 @@
         </tr>
       </thead>
       <tbody class="table-hover">
+        <% if @prescriptions.empty? %>
+          <tr>
+            <td>You have not added any prescriptions</td>
+          </tr>
+        <% else %>
           <% @prescriptions.each do |rx| %>
             <tr>
               <td><%= link_to rx.drug, prescription_path(rx) %></td>
             </tr>
           <% end %>
+        <% end %>
       </tbody>
     </table>
   </div>
   <div class="col-md-6">
+    <table class="table table-condensed table-fill">
+      <thead>
+        <tr>
+          <th class="text-left">Physicians</th>
+        </tr>
+      </thead>
+      <tbody class="table-hover">
+        <% if @physicians.empty? %>
+          <tr>
+            <td>You have not added a physician</td>
+          </tr>
+        <% else %>
+          <% @physicians.each do |md| %>
+            <tr>
+              <td>
+                <%= md.name %>
+                <% if !md.address.empty? && !md.city.empty? && !md.state.empty? && !md.zip.empty? %>
+                  <%= md.address %>, <%= md.city %>, <%= md.state %> <%= md.zip %>
+                <% end %>
+                <%= md.phone %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
   </div>
  </div>
 <%= link_to "Add Prescription", new_prescription_path %>
+<%= link_to "Add Physician", new_physician_path %>
