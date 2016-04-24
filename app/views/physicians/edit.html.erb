@@ -1,0 +1,45 @@
+<%= physician_error_messages! %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 form-box">
+    <div class="form-top">
+      <h3>Edit Physician</h3>
+
+      <div class="form-bottom">
+
+        <%= form_for @physician, html: {id: "sign_up_form"} do |f| %>
+          <div class="form-group">
+            <%= f.text_field :name, id: "name", class: "form-control", placeholder: "Name" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :office, id: "office", class: "form-control", placeholder: "Office Name" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :address, id: "address", class: "form-control", placeholder: "Address" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :city, id: "city", class: "form-control", placeholder: "City" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :state, id: "state", class: "form-control", placeholder: "State" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :zip, id: "zip", class: "form-control", placeholder: "Zip Code" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :phone, id: "phone", class: "form-control", placeholder: "Phone Number" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Update", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

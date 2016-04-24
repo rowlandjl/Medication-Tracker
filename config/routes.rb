@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :prescriptions, only: [:show, :new, :create, :edit, :update, :destroy]
 
-  resources :physicians, only: [:new, :create]
+  resources :physicians, only: [:show, :new, :create, :edit, :update]
 
   authenticated :user do
     root 'dashboards#show', :as => 'user_root'

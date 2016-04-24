@@ -1,5 +1,9 @@
 class PhysiciansController < ApplicationController
 
+  def show
+    @physician = Physician.find(params[:id])
+  end
+
   def new
     @physician = Physician.new
   end
@@ -12,6 +16,19 @@ class PhysiciansController < ApplicationController
       redirect_to root_path
     else
       render action: 'new'
+    end
+  end
+
+  def edit
+    @physician = Physician.find(params[:id])
+  end
+
+  def update
+    @physician = Physician.find(params[:id])
+    if @physician.update(physician_params)
+      redirect_to user_root_path
+    else
+      render action: "edit"
     end
   end
 

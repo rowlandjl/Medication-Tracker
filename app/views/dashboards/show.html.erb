@@ -37,11 +37,7 @@
           <% @physicians.each do |md| %>
             <tr>
               <td>
-                <%= md.name %>
-                <% if !md.address.empty? && !md.city.empty? && !md.state.empty? && !md.zip.empty? %>
-                  <%= md.address %>, <%= md.city %>, <%= md.state %> <%= md.zip %>
-                <% end %>
-                <%= md.phone %>
+                <%= link_to md.name, physician_path(md)  %>
               </td>
             </tr>
           <% end %>
