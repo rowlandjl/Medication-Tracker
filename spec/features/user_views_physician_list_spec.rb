@@ -9,7 +9,7 @@ feature 'User views list of physicians', %Q{
   let(:another_user) { FactoryGirl.create(:user) }
 
   let!(:user_physician) { FactoryGirl.create(:physician, name: "John Smith", user:user) }
-  let!(:another_user_physician) { FactoryGirl.create(:physician, name: "Jane Doe", user:another_user ) }
+  let!(:another_user_physician) { FactoryGirl.create(:physician, name: "Jane Smith", user:another_user ) }
 
   before(:each) do
     sign_in(user)
@@ -21,7 +21,7 @@ feature 'User views list of physicians', %Q{
   end
 
   scenario 'user cannot view other users physicians' do
-    expect(page).to_not have_content "Jane Doe"
+    expect(page).to_not have_content "Jane Smith"
   end
 
 end
