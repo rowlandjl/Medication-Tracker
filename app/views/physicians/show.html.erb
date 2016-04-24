@@ -1,1 +1,7 @@
+<ul>
+  <h3><%= @physician.name %></h3>
+  <li>Address: <%= @physician.address %>, <%= @physician.city %>, <%= @physician.state %> <%= @physician.zip %></li>
+  <li>Phone Number: <%= @physician.phone %></li>
+</ul>
+
 <%= link_to "Edit Physician", edit_physician_path %>
