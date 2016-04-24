@@ -32,6 +32,12 @@ class PhysiciansController < ApplicationController
     end
   end
 
+  def destroy
+    @physician = Physician.find(params[:id])
+    @physician.destroy
+    redirect_to user_root_path
+  end
+
   private
 
   def physician_params
