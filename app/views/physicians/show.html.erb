@@ -1,8 +1,23 @@
-<ul>
-  <h3><%= @physician.name %></h3>
-  <li>Address: <%= @physician.address %>, <%= @physician.city %>, <%= @physician.state %> <%= @physician.zip %></li>
-  <li>Phone Number: <%= @physician.phone %></li>
-</ul>
-
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <table class="table table-condensed table-fill">
+      <thead>
+        <tr>
+          <th class="text-left"><%= @physician.name %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% if !@physician.address.empty? && !@physician.city.empty? && !@physician.state.empty? && !@physician.zip.empty? %>
+            <td>Address:<%= @physician.address %>, <%= @physician.city %>, <%= @physician.state %> <%= @physician.zip %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>Phone Number: <%= @physician.phone %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 <%= link_to "Edit Physician", edit_physician_path %>
 <%= link_to "Delete Physician", physician_path(@physician), method: :delete %>
