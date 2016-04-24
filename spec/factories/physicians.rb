@@ -7,5 +7,6 @@ FactoryGirl.define do
     state "VA"
     zip "12345"
     phone "888-888-8888"
+    user
   end
 end

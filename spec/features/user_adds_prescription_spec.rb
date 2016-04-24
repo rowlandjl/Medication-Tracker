@@ -21,6 +21,7 @@ feature 'User creates prescription', %Q{
 # - My new medication is added
 
   let!(:user) { FactoryGirl.create(:user) }
+  let!(:physician) { FactoryGirl.create(:physician, user: user) }
 
   before(:each) do
     sign_in(user)
@@ -28,14 +29,14 @@ feature 'User creates prescription', %Q{
   end
 
   scenario 'User provides valid information' do
-    rx = FactoryGirl.create(:prescription, user:user)
+    rx = FactoryGirl.create(:prescription, user:user, physician: physician)
 
     fill_in "drug_name", with: rx.drug
     fill_in "quantity", with: rx.quantity
     select "1", from: "dose_count"
     select "once a day", from: "frequency"
     fill_in "start_date", with: rx.start_date
-    fill_in "physician", with: rx.physician_name
+    select "John Smith", from:  "physician_name"
     click_button "Add Prescription"
 
     expect(page).to have_content "Crestor"

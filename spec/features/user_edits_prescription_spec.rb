@@ -9,7 +9,8 @@ feature 'User edits prescription', %Q{
 
   scenario 'user provides valid information' do
     user = FactoryGirl.create(:user)
-    FactoryGirl.create(:prescription, user: user)
+    physician = FactoryGirl.create(:physician, user: user)
+    FactoryGirl.create(:prescription, user: user, physician: physician)
 
     sign_in(user)
 
