@@ -18,14 +18,17 @@
           <% end %>
         </tr>
         <tr>
-          <% if !@prescription.physician_name.empty? %>
-            <td>Physician: <%= @prescription.physician_name %></td>
+          <% if !@prescription.physician.blank? %>
+            <td>Physician: <%= @prescription.physician.name %></td>
+          <% else %>
+            <td>Physician: You have not selected a physician for this prescription</td>
           <% end %>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-<ul>
-<%= link_to "Edit Prescription", edit_prescription_path %>
-<%= link_to "Delete Prescription", prescription_path(@prescription), method: :delete %>
+<div class="row text-center ">
+  <p id="user-log-in">No longer taking this prescription?</p>
+  <p><%= link_to "Delete Prescription", prescription_path(@prescription), method: :delete %></p>
+</div>

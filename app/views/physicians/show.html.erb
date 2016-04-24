@@ -19,5 +19,7 @@
     </table>
   </div>
 </div>
-<%= link_to "Edit Physician", edit_physician_path %>
-<%= link_to "Delete Physician", physician_path(@physician), method: :delete %>
+<div class="row text-center ">
+  <p id="user-log-in">No longer seeing this physician?</p>
+  <p><%= link_to "Delete Physician", physician_path(@physician), method: :delete %></p>
+</div>

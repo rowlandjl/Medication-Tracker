@@ -47,6 +47,32 @@
                 <p>Dashboard</p>
               <% end %>
             </div>
+            <div class="col-md-3 text-center">
+              <% if controller.controller_name == 'prescriptions' && controller.action_name == 'show' %>
+                <%= link_to edit_prescription_path do %>
+                  <%= image_tag("pill-icon.png", class: "dashboard-icon") %>
+                  <p>Edit Prescription</p>
+                <% end %>
+              <% else %>
+                <%= link_to new_prescription_path do %>
+                  <%= image_tag("pill-icon.png", class: "dashboard-icon") %>
+                  <p>Add Prescription</p>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="col-md-3 text-center">
+              <% if controller.controller_name == 'physicians' && controller.action_name == 'show' %>
+                <%= link_to edit_physician_path do %>
+                  <%= image_tag("doctor.png", class: "dashboard-icon") %>
+                  <p>Edit Physician</p>
+                <% end %>
+              <% else %>
+                <%= link_to new_physician_path do %>
+                  <%= image_tag("doctor.png", class: "dashboard-icon") %>
+                  <p>Add Physician</p>
+                <% end %>
+              <% end %>
+            </div>
           </div>
           <div class="col-md-4 text-right user-greeting">
             <p>Welcome, <%= "#{current_user.first_name}" %> <%= "#{current_user.last_name}" %></p>
