@@ -6,7 +6,7 @@
 
       <div class="form-bottom">
 
-        <%= form_for @prescription, html: {id: "sign_up_form"} do |f| %>
+        <%= form_for [@physician, @prescription], html: {id: "sign_up_form"} do |f| %>
           <div class="form-group">
             <%= f.text_field :drug, id: "drug_name", class: "form-control", placeholder: "Drug Name" %>
           </div>
@@ -32,7 +32,7 @@
           </div>
 
           <div class="form-group">
-            <%= f.text_field :physician_name, id: "physician", class: "form-control", placeholder: "Physician Name" %>
+            <%= f.collection_select :physician_id, Physician.where(user: current_user), :id, :name, {prompt: "Physician"}, {class: "form-control", id: "physician_name"} %>
           </div>
 
           <div class="actions">

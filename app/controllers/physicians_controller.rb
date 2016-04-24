@@ -6,6 +6,7 @@ class PhysiciansController < ApplicationController
 
   def new
     @physician = Physician.new
+    @user_physicians = Physician.where(user: current_user)
   end
 
   def create
