@@ -32,8 +32,8 @@ feature 'User creates prescription', %Q{
 
     fill_in "drug_name", with: rx.drug
     fill_in "quantity", with: rx.quantity
-    fill_in "dose_count", with: rx.dose_count
-    fill_in "frequency", with: rx.frequency
+    select "1", from: "dose_count"
+    select "once a day", from: "frequency"
     fill_in "start_date", with: rx.start_date
     fill_in "physician", with: rx.physician_name
     click_button "Add Prescription"

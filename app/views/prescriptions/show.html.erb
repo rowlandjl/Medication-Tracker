@@ -1,8 +1,31 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <table class="table table-condensed table-fill">
+      <thead>
+        <tr>
+          <th class="text-left"><%= @prescription.drug %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Quantity: <%= @prescription.quantity %></td>
+        </tr>
+        <tr>
+          <% if !@prescription.dose_count.empty? && !@prescription.frequency.empty? %>
+            <td>Directions: <%= @prescription.dose_count %> <%= @prescription.frequency %></td>
+          <% elsif !@prescription.frequency.empty? %>
+            <td>Frequency: <%= @prescription.frequency %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <% if !@prescription.physician_name.empty? %>
+            <td>Physician: <%= @prescription.physician_name %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 <ul>
-  <h3><%= @prescription.drug %></h3>
-  <li>Start Date: <%= @prescription.start_date %></li>
-  <li>Directions: <%= @prescription.dose_count %> <%= @prescription.frequency %></li>
-</ul>
-
 <%= link_to "Edit Prescription", edit_prescription_path %>
 <%= link_to "Delete Prescription", prescription_path(@prescription), method: :delete %>

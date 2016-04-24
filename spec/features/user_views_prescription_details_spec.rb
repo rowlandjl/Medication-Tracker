@@ -15,7 +15,7 @@ feature 'User views prescription details', %Q{
     click_link "Crestor"
 
     expect(page).to have_content "Crestor"
-    expect(page).to have_content "Start Date"
+    expect(page).to have_content "Quantity"
     expect(page).to have_content "Directions"
   end
 
