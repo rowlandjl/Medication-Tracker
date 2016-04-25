@@ -3,6 +3,10 @@ class PrescriptionsController < ApplicationController
 
   def show
     @prescription = Prescription.find(params[:id])
+    fda_url = ""
+    reactions_search =
+    reactions_limit
+    adverse_reactions = HTTParty.get
   end
 
   def new
@@ -50,6 +54,6 @@ class PrescriptionsController < ApplicationController
   private
 
   def prescription_params
-    params.require(:prescription).permit(:drug, :quantity, :dose_count, :frequency, :start_date, :end_date, :physician_id)
+    params.require(:prescription).permit(:drug, :strength, :quantity, :dose_count, :frequency, :start_date, :end_date, :physician_id)
   end
 end

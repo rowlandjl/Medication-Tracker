@@ -5,10 +5,14 @@
       <h3>Edit Prescription</h3>
 
       <div class="form-bottom">
-        <%= form_for @prescription, html: {id: "sign_up_form"} do |f| %>
+        <%= form_for [@physician, @prescription], html: {id: "sign_up_form"} do |f| %>
 
           <div class="form-group">
             <%= f.text_field :drug, id: "drug_name", class: "form-control", placeholder: "Drug Name" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :strength, id: "strength", class: "form-control", placeholder: "Drug Strength" %>
           </div>
 
           <div class="form-group">
