@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'bootstrap-select-rails'
+gem 'httparty'
+gem 'json-schema'
 
 group :development, :test do
   gem 'pry-rails'

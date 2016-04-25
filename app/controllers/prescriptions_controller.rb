@@ -3,10 +3,9 @@ class PrescriptionsController < ApplicationController
 
   def show
     @prescription = Prescription.find(params[:id])
-    fda_url = ""
-    reactions_search =
-    reactions_limit
-    adverse_reactions = HTTParty.get
+    @response = HTTParty.get(
+    "https://api.fda.gov/drug/event.json?&api_key=L3H3SeWMU19yDPGy4N2pDhUmzbsF8JhnDAGTYH8b&search=patient.drug.openfda.generic_name:#{@prescription.drug}+brand_name:#{@prescription.drug}&count=patient.reaction.reactionmeddrapt.exact&limit=5"
+    )
   end
 
   def new

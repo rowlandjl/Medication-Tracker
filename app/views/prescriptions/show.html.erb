@@ -24,6 +24,18 @@
             <td>Physician: You have not selected a physician for this prescription</td>
           <% end %>
         </tr>
+        <tr>
+            <% if !@response["results"].nil? %>
+              <td>Adverse: Reactions:
+                <% @response["results"].each do |result| %>
+                  <%= result["term"] %>
+                <% end %>
+              </td>
+            <% else %>
+              <td>Adverse Reactions: No reactions found for this drug</td>
+            <% end %>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
