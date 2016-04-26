@@ -3,9 +3,6 @@ class PrescriptionsController < ApplicationController
 
   def show
     @prescription = Prescription.find(params[:id])
-    @response = HTTParty.get(
-    "https://api.fda.gov/drug/event.json?&api_key=L3H3SeWMU19yDPGy4N2pDhUmzbsF8JhnDAGTYH8b&search=patient.drug.openfda.generic_name:#{@prescription.drug}+brand_name:#{@prescription.drug}&count=patient.reaction.reactionmeddrapt.exact&limit=5"
-    )
   end
 
   def new
@@ -15,7 +12,17 @@ class PrescriptionsController < ApplicationController
   end
 
   def create
+    # HIT THE API
+    # if no error code
+      # make drug, prescription, etc
+    # else
+      # flash warning and re-render form
+
+    # create drug from params[:drug][:name]
+    # drug = Drug.new(drug_params)
+    # @response = get_drug_data
     @prescription = Prescription.new(prescription_params)
+    # @prescription.drug = drug
     @prescription.user_id = current_user.id
 
     if @prescription.save
@@ -51,6 +58,16 @@ class PrescriptionsController < ApplicationController
   end
 
   private
+
+  def get_drug_data
+    HTTParty.get(
+      "https://api.fda.gov/drug/event.json?&api_key=L3H3SeWMU19yDPGy4N2pDhUmzbsF8JhnDAGTYH8b&search=patient.drug.openfda.generic_name:#{@prescription.drug}+brand_name:#{@prescription.drug}&count=patient.reaction.reactionmeddrapt.exact&limit=5"
+    )
+  end
+
+  def drug_params
+    params.require(:drug).permit(:name)
+  end
 
   def prescription_params
     params.require(:prescription).permit(:drug, :strength, :quantity, :dose_count, :frequency, :start_date, :end_date, :physician_id)

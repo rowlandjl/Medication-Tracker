@@ -5,6 +5,9 @@
       <h3>Create Prescription</h3>
 
       <div class="form-bottom">
+        <% fields_for [@drug] do |d| %>
+          <!-- do the drug name field here -->
+        <% end %>
 
         <%= form_for [@physician, @prescription], html: {id: "sign_up_form"} do |f| %>
           <div class="form-group">
