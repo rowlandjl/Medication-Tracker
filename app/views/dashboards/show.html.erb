@@ -14,7 +14,7 @@
         <% else %>
           <% @prescriptions.each do |rx| %>
             <tr>
-              <td><%= link_to "#{rx.drug} #{rx.strength}", prescription_path(rx) %></td>
+              <td><%= link_to "#{rx.drug.name} #{rx.strength}", prescription_path(rx) %></td>
             </tr>
           <% end %>
         <% end %>

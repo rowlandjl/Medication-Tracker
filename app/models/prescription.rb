@@ -1,8 +1,10 @@
 class Prescription < ActiveRecord::Base
   belongs_to :user
   belongs_to :physician
+  belongs_to :drug
 
-  validates :drug, :user_id, presence: true
+  validates :user_id, presence: true
+  validates :drug, presence: true
 
   FREQUENCY = [
     'once a day',

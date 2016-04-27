@@ -5,13 +5,11 @@
       <h3>Create Prescription</h3>
 
       <div class="form-bottom">
-        <% fields_for [@drug] do |d| %>
-          <!-- do the drug name field here -->
-        <% end %>
-
-        <%= form_for [@physician, @prescription], html: {id: "sign_up_form"} do |f| %>
+        <%= form_for @prescription, html: {id: "sign_up_form"} do |f| %>
           <div class="form-group">
-            <%= f.text_field :drug, id: "drug_name", class: "form-control", placeholder: "Drug Name" %>
+            <%= fields_for @drug do |d| %>
+              <%= d.text_field :name, class: "form-control", placeholder: "Drug Name" %>
+            <% end %>
           </div>
 
           <div class="form-group">
@@ -23,11 +21,11 @@
           </div>
 
           <div class="form-group">
-            <%= f.select :dose_count, @prescription_dose, {prompt: "Dose Count"}, {id: "dose_count", class: "form-control"} %>
+            <%= f.select :dose_count, Prescription::DOSE, {prompt: "Dose Count"}, {id: "dose_count", class: "form-control"} %>
           </div>
 
           <div class="form-group">
-            <%= f.select :frequency, @prescription_frequency, {prompt: "Frequency"}, {:class => "form-control", id: "frequency"} %>
+            <%= f.select :frequency, Prescription::FREQUENCY, {prompt: "Frequency"}, {:class => "form-control", id: "frequency"} %>
           </div>
 
           <div class="form-group">

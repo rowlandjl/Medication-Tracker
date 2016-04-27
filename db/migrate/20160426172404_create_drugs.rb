@@ -1,10 +1,9 @@
 class CreateDrugs < ActiveRecord::Migration
   class Drug < ActiveRecord::Base
-
   end
 
   class Prescription < ActiveRecord::Base
-
+    belongs_to :drug
   end
 
   def up
@@ -13,28 +12,31 @@ class CreateDrugs < ActiveRecord::Migration
       t.text :adverse_reactions, array: true, default: []
     end
 
-    add_column :prescriptions, :drug_id, :integer, null: false
+    rename_column :prescriptions, :drug, :drug_name
+    add_column :prescriptions, :drug_id, :integer
 
     Prescription.all.each do |rx|
-      drug_name = rx.drug.capitalize # IBUPROFEN and ibuprofen and Ibuprofen all get treated identically
+      drug_name = rx.drug_name.capitalize # IBUPROFEN and ibuprofen and Ibuprofen all get treated identically
       if drug_name.present?
         drug = Drug.find_or_create_by(name: drug_name)
         rx.update_attributes(drug_id: drug.id)
       end
     end
 
-    remove_column :prescriptions, :drug
+    change_column :prescriptions, :drug_id, :integer, null: false
+    remove_column :prescriptions, :drug_name
   end
 
   def down
-    add_column :prescriptions, :drug, :string
+    add_column :prescriptions, :drug_name, :string
 
     Prescription.all.each do |rx|
       if rx.drug.present?
-        rx.update_attributes(drug: drug.name)
+        rx.update_attributes(drug_name: rx.drug.name)
       end
     end
 
+    rename_column :prescriptions, :drug_name, :drug
     remove_column :prescriptions, :drug_id
 
     drop_table :drugs

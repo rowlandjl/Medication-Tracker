@@ -3,7 +3,7 @@
     <table class="table table-condensed table-fill">
       <thead>
         <tr>
-          <th class="text-left"><%= @prescription.drug %> <%= @prescription.strength %></th>
+          <th class="text-left"><%= @prescription.drug.name %> <%= @prescription.strength %></th>
         </tr>
       </thead>
       <tbody>
@@ -25,16 +25,9 @@
           <% end %>
         </tr>
         <tr>
-            <% if !@response["results"].nil? %>
-              <td>Adverse: Reactions:
-                <% @response["results"].each do |result| %>
-                  <%= result["term"] %>
-                <% end %>
+              <td>Adverse Reactions: <%= @prescription.drug.adverse_reactions.join(", ").capitalize! %>
+
               </td>
-            <% else %>
-              <td>Adverse Reactions: No reactions found for this drug</td>
-            <% end %>
-          </td>
         </tr>
       </tbody>
     </table>
