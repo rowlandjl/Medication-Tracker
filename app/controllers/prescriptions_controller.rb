@@ -30,14 +30,10 @@ class PrescriptionsController < ApplicationController
       end
       save_api_adverse_reactions
     end
-
-
   end
 
   def edit
     @prescription = Prescription.find(params[:id])
-    @prescription_frequency = Prescription::FREQUENCY
-    @prescription_dose = Prescription::DOSE
   end
 
   def update
@@ -61,7 +57,7 @@ class PrescriptionsController < ApplicationController
 
   def get_drug_data(drug_name)
     HTTParty.get(
-      "https://api.fda.gov/drug/event.json?&api_key=L3H3SeWMU19yDPGy4N2pDhUmzbsF8JhnDAGTYH8b&search=patient.drug.openfda.generic_name:#{drug_name}+brand_name:#{drug_name}&count=patient.reaction.reactionmeddrapt.exact&limit=5"
+      "https://api.fda.gov/drug/event.json?&api_key=L3H3SeWMU19yDPGy4N2pDhUmzbsF8JhnDAGTYH8b&search=patient.drug.openfda.generic_name:#{drug_name}+brand_name:#{drug_name}&count=patient.reaction.reactionmeddrapt.exact&limit=10"
     )
   end
 
