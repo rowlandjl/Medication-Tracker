@@ -3,7 +3,7 @@
     <table class="table table-condensed table-fill">
       <thead>
         <tr>
-          <th class="text-left"><%= @prescription.drug %></th>
+          <th class="text-left"><%= @prescription.drug.name %> <%= @prescription.strength %></th>
         </tr>
       </thead>
       <tbody>
@@ -23,6 +23,11 @@
           <% else %>
             <td>Physician: You have not selected a physician for this prescription</td>
           <% end %>
+        </tr>
+        <tr>
+              <td>Adverse Reactions: <%= @prescription.drug.adverse_reactions.join(", ").capitalize! %>
+
+              </td>
         </tr>
       </tbody>
     </table>

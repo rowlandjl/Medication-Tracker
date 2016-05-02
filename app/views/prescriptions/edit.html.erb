@@ -2,13 +2,13 @@
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3 form-box">
     <div class="form-top">
-      <h3>Edit Prescription</h3>
+      <h3><%= @prescription.drug.name %></h3>
 
       <div class="form-bottom">
         <%= form_for @prescription, html: {id: "sign_up_form"} do |f| %>
 
           <div class="form-group">
-            <%= f.text_field :drug, id: "drug_name", class: "form-control", placeholder: "Drug Name" %>
+            <%= f.text_field :strength, id: "strength", class: "form-control", placeholder: "Drug Strength" %>
           </div>
 
           <div class="form-group">
@@ -16,11 +16,11 @@
           </div>
 
           <div class="form-group">
-            <%= f.select :dose_count, @prescription_dose, {prompt: "Dose Count"}, {id: "dose_count", class: "form-control"} %>
+            <%= f.select :dose_count, Prescription::DOSE, {prompt: "Dose Count"}, {id: "dose_count", class: "form-control"} %>
           </div>
 
           <div class="form-group">
-            <%= f.select :frequency, @prescription_frequency, {prompt: "Frequency"}, {:class => "form-control", id: "frequency"} %>
+            <%= f.select :frequency, Prescription::FREQUENCY, {prompt: "Frequency"}, {:class => "form-control", id: "frequency"} %>
           </div>
 
           <div class="form-group">

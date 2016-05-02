@@ -6,7 +6,11 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<% if user_signed_in? %>
+<body class="dashboard-background">
+<% else %>
+<body class="main-page">
+<% end %>
     <div class="container">
       <div class="row main-header">
         <div class="col-md-8">

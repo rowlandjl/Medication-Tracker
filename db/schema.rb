@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424023043) do
+ActiveRecord::Schema.define(version: 20160426172404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "drugs", force: :cascade do |t|
+    t.string "name"
+    t.text   "adverse_reactions", default: [], array: true
+  end
 
   create_table "physicians", force: :cascade do |t|
     t.string   "name"
@@ -30,7 +35,6 @@ ActiveRecord::Schema.define(version: 20160424023043) do
   end
 
   create_table "prescriptions", force: :cascade do |t|
-    t.string   "drug",         null: false
     t.string   "quantity"
     t.string   "dose_count"
     t.string   "frequency"
@@ -40,6 +44,8 @@ ActiveRecord::Schema.define(version: 20160424023043) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "physician_id"
+    t.string   "strength"
+    t.integer  "drug_id",      null: false
   end
 
   create_table "users", force: :cascade do |t|

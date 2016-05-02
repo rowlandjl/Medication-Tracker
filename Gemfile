@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'bootstrap-select-rails'
+gem 'httparty'
+gem 'json-schema'
 
 group :development, :test do
   gem 'pry-rails'
@@ -41,6 +43,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
+  gem 'dotenv-rails'
 end
 
 group :development do
