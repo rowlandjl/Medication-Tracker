@@ -45,7 +45,7 @@ feature 'User creates prescription', %Q{
   scenario 'User provides invalid information' do
     click_button "Add Prescription"
 
-    expect(page).to have_content "can't be blank"
+    expect(page).to have_content "Please provide the name of a prescription drug."
   end
 
 end

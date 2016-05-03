@@ -17,7 +17,7 @@ class PrescriptionsController < ApplicationController
     @response = get_drug_data(params[:drug][:name])
 
     if @response["error"].present?
-      flash[:alert] = "Please provide a real drug."
+      flash[:alert] = "Please provide the name of a prescription drug."
       render action: 'new'
     else
       @prescription.drug = @drug
