@@ -8,6 +8,12 @@
         <%= form_for @prescription, html: {id: "sign_up_form"} do |f| %>
 
           <div class="form-group">
+            <%= fields_for @prescription.drug do |d| %>
+              <%= d.text_field :name, class: "form-control", placeholder: "Drug Name" %>
+            <% end %>
+          </div>
+
+          <div class="form-group">
             <%= f.text_field :strength, id: "strength", class: "form-control", placeholder: "Drug Strength" %>
           </div>
 

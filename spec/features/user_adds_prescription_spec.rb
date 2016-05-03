@@ -31,7 +31,7 @@ feature 'User creates prescription', %Q{
   scenario 'User provides valid information' do
     rx = FactoryGirl.create(:prescription, user:user, physician: physician)
 
-    fill_in "drug_name", with: rx.drug
+    fill_in "drug_name", with: rx.drug.name
     fill_in "quantity", with: rx.quantity
     select "1", from: "dose_count"
     select "once a day", from: "frequency"

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :prescription do
-    drug "Crestor"
+    drug
     quantity "30"
     dose_count "1"
     frequency "once a day"

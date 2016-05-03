@@ -9,8 +9,11 @@ feature 'User views list of prescriptions', %Q{
   let(:user) { FactoryGirl.create(:user) }
   let(:another_user) { FactoryGirl.create(:user) }
 
-  let!(:user_prescription) { FactoryGirl.create(:prescription, user: user, drug: "Prozovoloftin") }
-  let!(:another_user_prescription) { FactoryGirl.create(:prescription, user: another_user, drug: "Caffeine") }
+  let(:prozo) { FactoryGirl.create(:drug, name: "Prozovoloftin")}
+  let(:caffeine) { FactoryGirl.create(:drug, name: "Caffeine")}
+
+  let!(:user_prescription) { FactoryGirl.create(:prescription, user: user, drug: prozo) }
+  let!(:another_user_prescription) { FactoryGirl.create(:prescription, user: another_user, drug: caffeine) }
 
 
   before(:each) do
@@ -19,7 +22,7 @@ feature 'User views list of prescriptions', %Q{
   end
 
   scenario 'user can see a list of all prescriptions' do
-    expect(page).to have_content user_prescription.drug
+    expect(page).to have_content "Prozovoloftin"
   end
 
   scenario 'user cannot view other users prescriptions' do
