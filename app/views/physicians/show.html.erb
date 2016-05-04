@@ -8,8 +8,13 @@
       </thead>
       <tbody>
         <tr>
+          <% if !@physician.office.empty? %>
+            <td>Office: <%= @physician.office %></td>
+          <% end %>
+        </tr>
+        <tr>
           <% if !@physician.address.empty? && !@physician.city.empty? && !@physician.state.empty? && !@physician.zip.empty? %>
-            <td>Address:<%= @physician.address %>, <%= @physician.city %>, <%= @physician.state %> <%= @physician.zip %></td>
+            <td>Address: <%= @physician.address %>, <%= @physician.city %>, <%= @physician.state %> <%= @physician.zip %></td>
           <% end %>
         </tr>
         <tr>

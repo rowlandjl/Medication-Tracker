@@ -16,8 +16,22 @@
 @import "bootstrap";
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
+.carousel-image {
+  max-height: 500px;
+  width: 100%;
+}
+
 .dashboard-background {
-  background-color: #eaeaea;
+  // background-color: #eaeaea;
+}
+
+.navbar li {
+  margin-top: 15px;
+}
+
+.navbar {
+  background-color: white;
+  margin-bottom: 0;
 }
 
 .form-top, .subheader {
@@ -37,12 +51,19 @@
   background: #fff;
   color: black;
   padding: 10px 0;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.medication-table {
+  padding-top: 10px;
+  color: black;
 }
 
 a {
   color: black;
 }
+
+
 
 .subheader li {
   display: inline-block;

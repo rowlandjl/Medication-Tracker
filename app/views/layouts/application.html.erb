@@ -11,10 +11,10 @@
 <% else %>
 <body class="main-page">
 <% end %>
+  <nav class="navbar" role="navigation">
     <div class="container">
-      <div class="row main-header">
-        <div class="col-md-8">
-          <h6><%= link_to "Medication Tracker", root_path, id: "logo" %></h6>
+        <div class="col-md-8 navbar-header">
+          <h6><%= link_to "Medication Tracker", root_path, id: "logo", class: "navbar-brand" %></h6>
         </div>
         <div class="col-md-4">
           <ul class="navbar text-right">
@@ -29,6 +29,7 @@
         </div>
       </div>
     </div>
+  </nav>
     <% if !user_signed_in? %>
     <div class="container-fluid">
     <% else %>
