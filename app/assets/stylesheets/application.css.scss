@@ -12,27 +12,79 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";
+@import "bootstrap-sprockets";
 @import "bootstrap";
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css");
+
+// Home page
 
 .carousel-image {
   max-height: 500px;
   width: 100%;
 }
 
-.dashboard-background {
-  // background-color: #eaeaea;
-}
-
 .navbar li {
   margin-top: 15px;
+}
+
+
+.navbar li {
+  display: inline-block;
 }
 
 .navbar {
   background-color: white;
   margin-bottom: 0;
 }
+
+.home-about {
+  margin: 30px 0;
+}
+
+.about-container {
+  padding-bottom: 35px;
+}
+
+.text-about {
+  font-size: 55px;
+}
+
+footer {
+  border-top: 2px solid #eeeeee;
+}
+
+.home-footer {
+  padding: 30px 0;
+}
+
+
+.main-header {
+  padding-top: 10px;
+}
+
+.navbar {
+  padding: 15px;
+}
+
+.navbar li {
+  padding: 0 20px;
+}
+
+p, .navbar {
+  font-family: 'Arial';
+}
+
+#logo, .text-about {
+  font-family: 'Raleway';
+  font-weight: normal;
+}
+
+#logo {
+  font-size: 28px;
+}
+
+// Dashboard and Forms
 
 .form-top, .subheader {
   font-family: 'Roboto', sans-serif;
@@ -54,6 +106,10 @@
   margin-top: 20px;
 }
 
+.subheader li {
+  display: inline-block;
+}
+
 .medication-table {
   padding-top: 10px;
   color: black;
@@ -63,37 +119,9 @@ a {
   color: black;
 }
 
-
-
-.subheader li {
-  display: inline-block;
-}
-
-.navbar li {
-  display: inline-block;
-}
-
 a:hover {
   color: black;
   text-decoration: none;
-}
-
-.main-header {
-  padding-top: 10px;
-}
-
-.navbar {
-  padding: 15px;
-}
-
-.navbar li {
-  padding: 0 20px;
-}
-
-#logo {
-  font-family: 'Raleway';
-  font-weight: normal;
-  font-size: 28px;
 }
 
 .form-bottom {
@@ -155,40 +183,20 @@ h3 {
 //
 // /* Mobile */
 // @media (max-width: 767px) {
-//   .item {
-//     height: 100%;
-//   }
-//   .item > img {
-//     width: 100%;
-//   }
+//
 // }
 //
 // /* tablets */
 // @media (max-width: 991px) and (min-width: 768px) {
-//   .item {
-//     height: auto;
-//   }
-//   .item > img {
-//     width: 100%;
-//   }
+//
 // }
 //
 // /* laptops */
 // @media (max-width: 1023px) and (min-width: 992px) {
-//   .item {
-//     height: auto;
-//   }
-//   .item > img {
-//     width: 100%;
-//   }
+//
 // }
 //
 // /* desktops */
 // @media (min-width: 1024px) {
-//   .item {
-//     height: 100%;
-//   }
-//   .item > img {
-//     width: 100%;
-//   }
+//
 // }

@@ -33,7 +33,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'bootstrap-select-rails'
 gem 'httparty'
-gem 'json-schema'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'pry-rails'
