@@ -12,7 +12,7 @@ What to do once they're logged in
 
 ## ER Diagram
 
-[ER-Diagram](http://i.imgur.com/oqPpggM.png?1)
+![ER-Diagram](http://i.imgur.com/oqPpggM.png?1)
 
 ## How to Clone and Set Up Locally
 
