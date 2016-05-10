@@ -25,11 +25,11 @@ feature 'User edits profile', %Q{
   end
 
   scenario 'user provides valid information' do
-    fill_in "first_name", with: user.first_name
-    fill_in "last_name", with: "Smith"
-    fill_in "dob", with: user.dob
-    fill_in "email", with: "test@example.com"
-    fill_in "current_password", with: user.password
+    fill_in "user_first_name", with: user.first_name
+    fill_in "user_last_name", with: "Smith"
+    fill_in "user_dob", with: user.dob
+    fill_in "user_email", with: "test@example.com"
+    fill_in "user_current_password", with: user.password
     click_button "Update"
 
     expect(page).to have_content "Your account has been updated successfully."

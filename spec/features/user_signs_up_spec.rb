@@ -24,12 +24,12 @@ feature 'User signs up', %Q{
     visit root_path
 
     click_link("Sign Up")
-    fill_in "First Name", with: user.first_name
-    fill_in "Last Name", with: user.last_name
-    fill_in "Date of Birth", with: user.dob
-    fill_in "email", with: email
-    fill_in "password", with: user.password
-    fill_in "Password confirmation", with: user.password
+    fill_in "user_first_name", with: user.first_name
+    fill_in "user_last_name", with: user.last_name
+    fill_in "user_dob", with: user.dob
+    fill_in "user_email", with: email
+    fill_in "user_password", with: user.password
+    fill_in "user_password_confirmation", with: user.password
     click_button "Sign up"
 
     expect(page).to have_content "Welcome! You have signed up successfully."

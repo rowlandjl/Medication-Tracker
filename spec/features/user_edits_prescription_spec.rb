@@ -18,7 +18,7 @@ feature 'User edits prescription', %Q{
     click_link "Edit Prescription"
 
     fill_in "drug_name", with: "Crestor"
-    select "2", from: "dose_count"
+    select "2", from: "prescription_dose_count"
 
     click_button "Update"
 

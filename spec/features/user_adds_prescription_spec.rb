@@ -32,10 +32,10 @@ feature 'User creates prescription', %Q{
     rx = FactoryGirl.create(:prescription, user:user, physician: physician)
 
     fill_in "drug_name", with: rx.drug.name
-    fill_in "quantity", with: rx.quantity
-    select "1", from: "dose_count"
-    select "once a day", from: "frequency"
-    fill_in "start_date", with: rx.start_date
+    fill_in "prescription_quantity", with: rx.quantity
+    select "1", from: "prescription_dose_count"
+    select "once a day", from: "prescription_frequency"
+    fill_in "prescription_start_date", with: rx.start_date
     select "John Smith", from:  "physician_name"
     click_button "Add Prescription"
 
