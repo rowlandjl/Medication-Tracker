@@ -18,7 +18,6 @@ div.col-md-4 {
 }
 
 th {
-  // color:#666B85;
   color: black;
   background:#fff;
   border-bottom:4px solid #9ea7af;
@@ -43,19 +42,11 @@ th:last-child {
 tr {
   border-top: 1px solid #C1C3D1;
   border-bottom-: 1px solid #C1C3D1;
-  // color:#666B85;
   color: black;
   font-size:16px;
   font-weight:normal;
   text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
-
-// tr:hover td {
-//   background:#4E5066;
-//   color:#FFFFFF;
-//   border-top: 1px solid #22262e;
-//   border-bottom: 1px solid #22262e;
-// }
 
 tr:first-child {
   border-top:none;
@@ -64,14 +55,6 @@ tr:first-child {
 tr:last-child {
   border-bottom:none;
 }
-
-// tr:nth-child(odd) td {
-//   background:#EBEBEB;
-// }
-
-// tr:nth-child(odd):hover td {
-//   background:#4E5066;
-// }
 
 tr:last-child td:first-child {
   border-bottom-left-radius:3px;

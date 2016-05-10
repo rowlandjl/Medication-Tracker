@@ -13,31 +13,31 @@
           </div>
 
           <div class="form-group">
-            <%= f.text_field :strength, id: "strength", class: "form-control", placeholder: "Drug Strength" %>
+            <%= f.text_field :strength, class: "form-control", placeholder: "Drug Strength" %>
           </div>
 
           <div class="form-group">
-            <%= f.text_field :quantity, id: "quantity", class: "form-control", placeholder: "Quantity" %>
+            <%= f.text_field :quantity, class: "form-control", placeholder: "Quantity" %>
           </div>
 
           <div class="form-group">
-            <%= f.select :dose_count, Prescription::DOSE, {prompt: "Dose Count"}, {id: "dose_count", class: "form-control"} %>
+            <%= f.select :dose_count, Prescription::DOSE, {prompt: "Dose Count"}, {class: "form-control"} %>
           </div>
 
           <div class="form-group">
-            <%= f.select :frequency, Prescription::FREQUENCY, {prompt: "Frequency"}, {:class => "form-control", id: "frequency"} %>
+            <%= f.select :frequency, Prescription::FREQUENCY, {prompt: "Frequency"}, {:class => "form-control"} %>
           </div>
 
           <div class="form-group">
-            <%= f.text_field :start_date, id: "start_date", class: "form-control", placeholder: "Start Date" %>
+            <%= f.text_field :start_date, class: "form-control", placeholder: "Start Date" %>
           </div>
 
           <div class="form-group">
-            <%= f.text_field :end_date, id: "end_date", class: "form-control", placeholder: "End Date" %>
+            <%= f.text_field :end_date, class: "form-control", placeholder: "End Date" %>
           </div>
 
           <div class="form-group">
-            <%= f.collection_select :physician_id, Physician.where(user: current_user), :id, :name, {prompt: "Physician"}, {class: "form-control", id: "physician_name"} %>
+            <%= f.collection_select :physician_id, Physician.where(user: current_user), :id, :name, {prompt: "Physician"}, {class: "form-control"} %>
           </div>
 
           <div class="actions">

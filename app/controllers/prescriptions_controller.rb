@@ -12,7 +12,7 @@ class PrescriptionsController < ApplicationController
 
   def create
     @prescription = Prescription.new(prescription_params)
-    @drug = Drug.find_or_initialize_by(drug_params) # not checking uppderacse, etc
+    @drug = Drug.find_or_initialize_by(drug_params)
 
     @response = get_drug_data(params[:drug][:name])
 

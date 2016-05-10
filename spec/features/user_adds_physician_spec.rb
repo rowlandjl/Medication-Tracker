@@ -16,13 +16,13 @@ feature 'User adds physician', %Q{
   scenario 'user provides valid information' do
     physician = FactoryGirl.create(:physician, user:user)
 
-    fill_in "name", with: physician.name
-    fill_in "office", with: physician.office
-    fill_in "address", with: physician.address
-    fill_in "city", with: physician.city
-    fill_in "state", with: physician.state
-    fill_in "zip", with: physician.zip
-    fill_in "phone", with: physician.phone
+    fill_in "physician_name", with: physician.name
+    fill_in "physician_office", with: physician.office
+    fill_in "physician_address", with: physician.address
+    fill_in "physician_city", with: physician.city
+    fill_in "physician_state", with: physician.state
+    fill_in "physician_zip", with: physician.zip
+    fill_in "physician_phone", with: physician.phone
     click_button "Add Physician"
 
     expect(page).to have_content "John Smith"

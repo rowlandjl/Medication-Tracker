@@ -15,8 +15,8 @@ feature 'User edits a physician', %Q{
     click_link "John Smith"
     click_link "Edit Physician"
 
-    fill_in "name", with: "John Smith"
-    fill_in "phone", with: "123-456-7890"
+    fill_in "physician_name", with: "John Smith"
+    fill_in "physician_phone", with: "123-456-7890"
 
     click_button "Update"
     click_link "John Smith"
