@@ -18,20 +18,7 @@
 
 // Home page - Carousel
 
-.carousel {
-  height: calc(100vh - 98px);
-  overflow: hidden;
-}
 
-.item {
-  height: 100%;
-  overflow: hidden;
-}
-
-.carousel-image {
-  width: 100%;
-  height: auto;
-}
 
 // Homepage - Navigation
 
@@ -58,6 +45,7 @@ p, .navbar {
 
 #logo {
   font-size: 28px;
+  padding-top: 15px;
 }
 
 .navbar li {
@@ -192,4 +180,33 @@ h3 {
 .user-greeting {
   padding-top: 15px;
   font-size: 20px;
+}
+
+@media only screen and (min-device-width: 1046px) {
+  .carousel {
+    height: calc(100vh - 98px);
+    overflow: hidden;
+  }
+
+  .item {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-device-width: 1047px) {
+  .item {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: 500px;
+  }
 }
