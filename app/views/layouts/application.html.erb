@@ -14,10 +14,10 @@
 <% end %>
   <nav class="navbar" role="navigation">
     <div class="container">
-        <div class="col-md-8 navbar-header">
-          <h6><%= link_to "Medication Tracker", root_path, id: "logo", class: "navbar-brand" %></h6>
+        <div class="col-xs-12 col-md-6 navbar-header">
+          <h6><%= link_to "Medication Tracker", root_path, id: "logo" %></h6>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-12 col-md-6">
           <ul class="navbar text-right">
             <% if !user_signed_in? %>
               <li><%= link_to "Sign Up", new_user_registration_path %></li>
@@ -46,14 +46,14 @@
       </div>
       <% if user_signed_in? %>
         <div class="row subheader">
-          <div class="col-md-8">
-            <div class="col-md-3 text-center">
+          <div class="col-xs-12 col-md-8">
+            <div class="col-xs-12 col-md-3 text-center">
               <%= link_to user_root_path do %>
                 <%= image_tag("buildings.png", class: "dashboard-icon") %>
                 <p>Dashboard</p>
               <% end %>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-xs-12 col-md-3 text-center">
               <% if controller.controller_name == 'prescriptions' && controller.action_name == 'show' %>
                 <%= link_to edit_prescription_path do %>
                   <%= image_tag("pill-icon.png", class: "dashboard-icon") %>
@@ -66,7 +66,7 @@
                 <% end %>
               <% end %>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-xs-12 col-md-3 text-center">
               <% if controller.controller_name == 'physicians' && controller.action_name == 'show' %>
                 <%= link_to edit_physician_path do %>
                   <%= image_tag("doctor.png", class: "dashboard-icon") %>
@@ -80,7 +80,7 @@
               <% end %>
             </div>
           </div>
-          <div class="col-md-4 text-right user-greeting">
+          <div class="col-xs-12 col-md-4 text-center user-greeting">
             <p>Welcome, <%= "#{current_user.first_name}" %> <%= "#{current_user.last_name}" %></p>
           </div>
         </div>

@@ -16,47 +16,24 @@
 @import "bootstrap";
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
-// Home page
+// Home page - Carousel
+
+.carousel {
+  height: calc(100vh - 98px);
+  overflow: hidden;
+}
+
+.item {
+  height: 100%;
+  overflow: hidden;
+}
 
 .carousel-image {
-  max-height: 500px;
   width: 100%;
+  height: auto;
 }
 
-.navbar li {
-  margin-top: 15px;
-}
-
-
-.navbar li {
-  display: inline-block;
-}
-
-.navbar {
-  background-color: white;
-  margin-bottom: 0;
-}
-
-.home-about {
-  margin: 30px 0;
-}
-
-.about-container {
-  padding-bottom: 35px;
-}
-
-.text-about {
-  font-size: 55px;
-}
-
-footer {
-  border-top: 2px solid #eeeeee;
-}
-
-.home-footer {
-  padding: 30px 0;
-}
-
+// Homepage - Navigation
 
 .main-header {
   padding-top: 10px;
@@ -81,6 +58,44 @@ p, .navbar {
 
 #logo {
   font-size: 28px;
+}
+
+.navbar li {
+  margin-top: 15px;
+}
+
+
+.navbar li {
+  display: inline-block;
+}
+
+.navbar {
+  background-color: white;
+  margin-bottom: 0;
+}
+
+// Home page -- About section
+
+.home-about {
+  margin: 30px 0;
+}
+
+.about-container {
+  padding-bottom: 35px;
+}
+
+.text-about {
+  font-size: 55px;
+}
+
+// Home page -- Footer
+
+footer {
+  border-top: 2px solid #eeeeee;
+}
+
+.home-footer {
+  padding: 30px 0;
 }
 
 // Dashboard and Forms
@@ -178,24 +193,3 @@ h3 {
   padding-top: 15px;
   font-size: 20px;
 }
-
-//
-// /* Mobile */
-// @media (max-width: 767px) {
-//
-// }
-//
-// /* tablets */
-// @media (max-width: 991px) and (min-width: 768px) {
-//
-// }
-//
-// /* laptops */
-// @media (max-width: 1023px) and (min-width: 992px) {
-//
-// }
-//
-// /* desktops */
-// @media (min-width: 1024px) {
-//
-// }
