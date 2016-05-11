@@ -18,11 +18,8 @@ To test out the web application before creating an account, use the following in
 
 ## How to Clone and Set Up Locally
 
-git clone the repository
-rake db:create
-rake db:migrate
-rake db:seed
-
-rails s to view the local site on localhost:3000
-
-instruction on how to run the test suite
+1. Clone Respository: `git clone https://github.com/rowlandjl/Medication-Tracker`
+2. Create database: `rake db:create`
+3. Migrate database: `rake db:migrate`
+4. Run local server: `rails s` to view on localhost:3000
+5. Run test suite: `rake`
