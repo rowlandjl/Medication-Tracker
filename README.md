@@ -7,8 +7,9 @@ information and view medication side effects through the openFDA API.
 
 ## How to Use the Site
 
-Instructions on how to log into a test account w/ dummy data
-What to do once they're logged in
+To test out the site before creating an account, use the following information to log in using a test account:
+1. Username: `test@email.com`
+2. Password: `password`
 
 ## ER Diagram
 
