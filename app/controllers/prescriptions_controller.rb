@@ -74,6 +74,6 @@ class PrescriptionsController < ApplicationController
   end
 
   def prescription_params
-    params.require(:prescription).permit(:strength, :quantity, :dose_count, :frequency, :start_date, :end_date, :physician_id)
+    params.require(:prescription).permit(:strength, :quantity, :dose_count, :frequency, :physician_id)
   end
 end
